@@ -29,7 +29,7 @@ past_rev = 0
 highest_increase = 0
 lowest_increase = 0
 
-# Create lists to track Revenue Chang
+# Create lists to track Revenue Change
 rev_change = []
 
 # Creat file path
@@ -50,6 +50,7 @@ with open(csvpath, newline='') as csvfile:
         total_rev = total_rev + (int(row[1]))
         
         # Make new variable for revenue changes
+        
         monthly_rev_change = int(row[1]) - past_rev
         past_rev = int(row[1])
 
@@ -59,7 +60,7 @@ with open(csvpath, newline='') as csvfile:
         #Calculate average change in revenue
         avg_rev_change = round(sum(rev_change) / total_months)
         
-        #print(avgRevChange) - Sanity Check
+        # print(avg_rev_change) 
 
         # Find the greatest increase in revenue month over month
         if (monthly_rev_change > highest_increase):
